@@ -6,7 +6,6 @@ import Image from 'next/image';
 import cardImage from "../../../public/assets/card-image.png"
 import checkMarkImage from "../../../public/assets/Frame 248.png"
 
-// ============= TYPES =============
 interface WeekOption {
   id: number;
   weeks: number;
@@ -43,7 +42,6 @@ interface FooterProps {
   onNext: () => void;
 }
 
-// ============= DATA =============
 const weekOptions: WeekOption[] = [
   { id: 1, weeks: 1, days: 5, price: 35 },
   { id: 2, weeks: 2, days: 10, price: 70 },
@@ -51,7 +49,6 @@ const weekOptions: WeekOption[] = [
   { id: 4, weeks: 4, days: 20, price: 140 },
 ];
 
-// ============= DECORATIVE ELEMENTS COMPONENT =============
 const DecorativeElements: React.FC = () => {
   return (
     <>
@@ -81,7 +78,6 @@ const DecorativeElements: React.FC = () => {
   );
 };
 
-// ============= HEADER COMPONENT =============
 const Header: React.FC<HeaderProps> = ({ onBack }) => {
   return (
     <div className="mb-8">
@@ -101,7 +97,6 @@ const Header: React.FC<HeaderProps> = ({ onBack }) => {
   );
 };
 
-// ============= WEEK CARD COMPONENT =============
 const WeekCard: React.FC<WeekCardProps> = ({ option, isSelected, onSelect }) => {
   return (
     <button
@@ -145,7 +140,6 @@ const WeekCard: React.FC<WeekCardProps> = ({ option, isSelected, onSelect }) => 
   );
 };
 
-// ============= WEEK OPTIONS GRID COMPONENT =============
 const WeekOptionsGrid: React.FC<{
   selectedWeeks: number | null;
   onSelect: (weeks: number) => void;
@@ -164,7 +158,6 @@ const WeekOptionsGrid: React.FC<{
   );
 };
 
-// ============= EXPANDED SECTION COMPONENT =============
 const ExpandedSection: React.FC<ExpandedSectionProps> = ({
   selectedOption,
   startDate,
@@ -210,7 +203,6 @@ const ExpandedSection: React.FC<ExpandedSectionProps> = ({
   );
 };
 
-// ============= FOOTER COMPONENT =============
 const Footer: React.FC<FooterProps> = ({ onBack, onNext }) => {
   return (
     <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -235,7 +227,6 @@ const Footer: React.FC<FooterProps> = ({ onBack, onNext }) => {
   );
 };
 
-// ============= DATE PICKER MODAL COMPONENT =============
 const DatePickerModal: React.FC<DatePickerProps> = ({
   isOpen,
   onClose,
@@ -273,7 +264,6 @@ const DatePickerModal: React.FC<DatePickerProps> = ({
             </div>
           </div>
 
-          {/* Month Picker */}
           <div className="flex flex-col items-center">
             <div className="h-32 overflow-y-scroll scrollbar-hide">
               {['April', 'May', 'June', 'July', 'August'].map((month) => (
@@ -292,7 +282,6 @@ const DatePickerModal: React.FC<DatePickerProps> = ({
             </div>
           </div>
 
-          {/* Year Picker */}
           <div className="flex flex-col items-center">
             <div className="h-32 overflow-y-scroll scrollbar-hide">
               {[2011, 2012, 2013, 2014, 2015].map((year) => (
@@ -352,7 +341,6 @@ const DatePickerModal: React.FC<DatePickerProps> = ({
   );
 };
 
-// ============= MAIN COMPONENT =============
 const AftercareProgramSelector: React.FC = () => {
   const [selectedWeeks, setSelectedWeeks] = useState<number | null>(null);
   const [showDateModal, setShowDateModal] = useState(false);
